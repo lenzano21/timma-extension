@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Timma Time Tracking",
+  "version": "1.0",
+  "description": "Broken Rubik's Timma Extension",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Track Time with Timma"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["modal.css"],
+      "js": ["content.js"]
+    }
+  ]
+}

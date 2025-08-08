@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.timma-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2147483646;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.timma-modal-content {
+    font-family: 'Roboto', sans-serif;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 2147483647;
+    width: 480px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+}
+
+.timma-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.timma-logo {
+    height: 24px;
+    width: 24px;
+    color: #333;
+}
+
+.timma-header-link {
+    color: #007bff;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 0.9rem;
+}
+
+.timma-modal-body {
+    padding: 20px;
+}
+
+.timma-form-group {
+    margin-bottom: 15px;
+}
+
+.timma-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.timma-form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.timma-notes-group {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.timma-time-group {
+    width: 100px;
+}
+
+.timma-textarea,
+#time-modal,
+.timma-select {
+    font-family: 'Roboto', sans-serif; /* Ensure consistent font */
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    color: #333;
+}
+
+.timma-select {
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5L6 6.5L11 1.5" stroke="%23333" stroke-width="2"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    margin-bottom: 10px;
+}
+
+.timma-select:invalid,
+.timma-select option[value=""] {
+    color: #999;
+}
+
+.timma-textarea {
+    resize: none;
+    overflow-y: hidden;
+    min-height: 46px;
+}
+
+#time-modal {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.timma-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.timma-submit-btn,
+.timma-cancel-btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.timma-submit-btn {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    margin-right: 10px;
+}
+
+.timma-cancel-btn {
+    background-color: #fff;
+    color: #333;
+    border-color: #ccc;
+}
+
+/* --- Validation Styles --- */
+.timma-input-error {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25) !important;
+}
+
+.timma-error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    text-align: left;
+    flex-grow: 1;
+    margin-right: 10px;
+}
