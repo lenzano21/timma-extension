@@ -7,14 +7,17 @@
   "background": {
     "service_worker": "background.js"
   },
-  "action": {
-    "default_title": "Track Time with Timma"
-  },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "css": ["modal.css"],
+      "matches": ["https://app.clickup.com/t/*"],
+      "css": ["timma-modal.css", "clickup-section.css"],
       "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["timma-modal.css", "clickup-section.css"],
+      "matches": ["<all_urls>"]
     }
   ]
 }

@@ -23,7 +23,7 @@
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     z-index: 2147483647;
-    width: 480px;
+    width: 630px;
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -71,11 +71,19 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 10px;
 }
 
 .timma-notes-group {
     flex-grow: 1;
-    margin-right: 10px;
+}
+
+.timma-task-group {
+    flex-grow: 1;
+}
+
+.timma-date-group {
+    width: 150px;
 }
 
 .timma-time-group {
@@ -84,8 +92,9 @@
 
 .timma-textarea,
 #time-modal,
+#date-modal,
 .timma-select {
-    font-family: 'Roboto', sans-serif; /* Ensure consistent font */
+    font-family: 'Roboto', sans-serif;
     width: 100%;
     padding: 12px;
     border-radius: 6px;
@@ -94,6 +103,7 @@
     background-color: #fff;
     transition: border-color 0.2s, box-shadow 0.2s;
     color: #333;
+    font-size: 1.2rem;
 }
 
 .timma-select {
@@ -119,7 +129,10 @@
 
 #time-modal {
     text-align: right;
-    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#date-modal {
     font-weight: 500;
 }
 
@@ -140,6 +153,8 @@
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: 500;
+    min-width: 100px; /* Ensure minimum width for both buttons */
+    text-align: center; /* Center text if button is wider */
 }
 
 .timma-submit-btn {
@@ -167,4 +182,19 @@
     text-align: left;
     flex-grow: 1;
     margin-right: 10px;
+}
+
+/* --- Custom Tooltip Styles --- */
+.timma-custom-tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 2147483647; /* Ensure it's on top */
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    pointer-events: none; /* Allow clicks to pass through */
 }

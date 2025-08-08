@@ -1,17 +1,3 @@
-// Listen for the extension's toolbar icon to be clicked
-chrome.action.onClicked.addListener((tab) => {
-  if (tab.id) {
-    // Send a message to the active tab's content script to open the modal
-    chrome.tabs.sendMessage(tab.id, { action: "openModal" }, (response) => {
-      if (chrome.runtime.lastError) {
-        // This error is expected on pages where the content script can't run.
-        // We can ignore it or log a less noisy message.
-        console.log("Timma extension icon clicked on a page where content scripts are not active.");
-      }
-    });
-  }
-});
-
 // Listen for messages from content scripts (e.g., to send data)
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "sendData") {
